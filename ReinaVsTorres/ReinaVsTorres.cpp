@@ -71,7 +71,7 @@ void ReiniciarTablero() { //todos los valores del tablero se convierten en ' ', 
 	}
 }
 
-int CharToInt(char c) {
+int CharToInt(char c) { //parse de caracter a entero
 	return int(c - '0');
 }
 
@@ -85,11 +85,11 @@ bool Validar(string str) { //validar input del usuario
 		system("PAUSE");
 		return false;
 	}
-	
+
 	return true;
 }
 
-void EditarPosicion(string str,int arr[2]) {
+void EditarPosicion(string str, int arr[2]) {
 
 	for (int i = 0; i < TABLERO_WIDTH; i++) { //convertir la columna insertada a su equivalente en el tablero
 		if (letterToInt[i][0] == str[0]) {
@@ -98,9 +98,7 @@ void EditarPosicion(string str,int arr[2]) {
 	}
 
 	for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); i++) {
-		if (isdigit(str[i])) {
-			arr[i] = CharToInt(str[i]) - 1;
-		}
+		arr[i] = CharToInt(str[i]) - 1;
 	}
 }
 
@@ -112,7 +110,6 @@ void RecorridosReina(int reina[2], int torres[2][2]) { //realiza los 8 recorrido
 		}
 	}
 }
-
 
 
 int main()
@@ -180,4 +177,3 @@ int main()
 	} while (true);
 
 }
-
